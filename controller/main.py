@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from service.fetch_k import stock_k
+from service.fetch_k import stock_k, stock_list, get_codes_count
 from service.spider import eventSpider, commentSpider
 
 app = Flask(__name__)
@@ -28,6 +28,18 @@ def get_comments():
     body = request.json
     page = body['page']
     return jsonify(commentSpider(page))
+
+@app.route('/get_stock_list')
+def get_stock_list():
+    body = request.json
+    date = body['date']
+    once = body['once']
+    pages = body['page']
+    return jsonify(stock_list(date, once, pages))
+
+@app.route('/get_codes_count')
+def get_count():
+    return jsonify(get_codes_count())
 
 if __name__ == '__main__':
     app.run(port='5000')
