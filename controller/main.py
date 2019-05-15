@@ -30,4 +30,4 @@ def get_comments():
     return jsonify(commentSpider(page))
 
 if __name__ == '__main__':
-    app.run(port='5001')
+    app.run(port='5000')
