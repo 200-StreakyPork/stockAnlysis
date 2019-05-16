@@ -1,0 +1,57 @@
+.timeR {
+    text-align: right;
+    font-size: 12px;
+    color: gray;
+    position: absolute;
+    bottom: 0;
+    left: 80%;
+    width: 15%;
+}
+
+.titleR {
+    text-align: left;
+    font-size: 30px;
+    color: black;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 75%;
+}
+
+
+.timeE {
+    text-align: right;
+    font-size: 12px;
+    color: gray;
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    height:20%;
+    width: 15%;
+}
+
+.titleE {
+    text-align: left;
+    font-size: 28px;
+    color: black;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height:20%;
+    width: 75%;
+}
+
+.contentE {
+    text-align: left;
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    top:25%;
+    left: 5%;
+    height:75%;
+    width: 75%;
+}
+
+.link{
+    font-weight: bold;
+}

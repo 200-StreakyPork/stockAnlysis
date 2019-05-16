@@ -1,0 +1,9 @@
+.test{
+    text-indent: 20px;//缩进
+    letter-spacing: 2px;//字符间隔，可以为负，会更紧凑
+    line-height: 70%;//行高,比例可以大于1
+    direction: rtl;//文字书写方向，默认是左到右，这里是右到左
+    word-spacing: 20px;//单词间隔
+    text-shadow:2px 2px #FF0000;//向右下2，2投射红色字影
+
+}

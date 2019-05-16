@@ -1,0 +1,18 @@
+.outerWrapper {
+    position: absolute;
+    top: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+    font-size: 18px;
+}
+.mainWrapper {
+    position: absolute;
+    top: 5%;
+    left:5%;
+    width:90%;
+    height:90%;
+}

@@ -1,0 +1,22 @@
+.userTop{
+    background-color: #373d41;
+    position:absolute;left: 0%;top:0%;width:100%;height:6%;
+}
+
+.userLeft {
+    background-color: #333744;
+    position:absolute;left: 0%;top:6%;width:0%;height:94%;
+}
+
+.userMain {
+    background-color: #333744;
+    position:absolute;left: 0%;top:5%;width:100%;height:95%
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
