@@ -27,6 +27,7 @@ def stock_k(time_start: str = '2016-01-01', time_end:str ='2099-01-01',gap: str 
     print('login respond error_code:' + lg.error_code)
     print('login respond  error_msg:' + lg.error_msg)
 
+    print(gap)
     if gap == 'd':
         columns = 'date,code,open,high,low,close,preclose,volume'
     elif gap == 'w' or gap == 'm':
@@ -39,7 +40,7 @@ def stock_k(time_start: str = '2016-01-01', time_end:str ='2099-01-01',gap: str 
     #### 获取沪深A股历史K线数据 ####
     rs = bs.query_history_k_data_plus(code,
                                       columns,
-                                      start_date='2016-01-01', end_date='2020-01-01',
+                                      start_date=time_start, end_date=time_end,
                                       frequency=gap, adjustflag="3")
     print('query_history_k_data_plus respond error_code:' + rs.error_code)
     print('query_history_k_data_plus respond error_msg:' + rs.error_msg)
