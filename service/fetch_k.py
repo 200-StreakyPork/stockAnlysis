@@ -33,12 +33,13 @@ def stock_k(time_start: str = '2016-01-01', time_end:str ='2099-01-01',gap: str 
         print('not min')
         columns = 'date,code,open,high,low,close,volume'
     else:
+        print("?????")
         columns = 'time,code,open,high,low,close,volume'
 
     #### 获取沪深A股历史K线数据 ####
     rs = bs.query_history_k_data_plus(code,
                                       columns,
-                                      start_date=time_start, end_date=time_end,
+                                      start_date='2016-01-01', end_date='2020-01-01',
                                       frequency=gap, adjustflag="3")
     print('query_history_k_data_plus respond error_code:' + rs.error_code)
     print('query_history_k_data_plus respond error_msg:' + rs.error_msg)

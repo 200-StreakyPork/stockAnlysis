@@ -50,4 +50,4 @@ def commentSpider(page):
     return list
 
 
-print(eventSpider('sz.000001'))
+# print(eventSpider('sz.000001'))

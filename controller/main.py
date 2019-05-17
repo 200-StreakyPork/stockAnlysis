@@ -12,7 +12,7 @@ def get_k():
     time_start = body['time_start']
     gap = body['gap']
 
-    result = stock_k(time_start, gap, code)
+    result = stock_k(time_start=time_start, gap=gap, code=code)
     return jsonify(result.to_dict('records'))
 
 
@@ -29,6 +29,7 @@ def get_comments():
     page = body['page']
     return jsonify(commentSpider(page))
 
+
 @app.route('/get_stock_list')
 def get_stock_list():
     body = request.json
@@ -37,9 +38,11 @@ def get_stock_list():
     pages = body['page']
     return jsonify(stock_list(date, once, pages))
 
+
 @app.route('/get_codes_count')
 def get_count():
     return jsonify(get_codes_count())
 
+
 if __name__ == '__main__':
-    app.run(port='5000')
+    app.run(port='5000', debug=True)
