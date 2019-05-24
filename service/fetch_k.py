@@ -17,9 +17,9 @@ def get_code():
     data['ts_code'] = data['ts_code'].apply(code_converge)
     return data
 
-def stock_k(time_start: str = '2016-01-01', time_end:str ='2099-01-01',gap: str = 'd', code: str = 'sz.000001') -> pd.DataFrame:
+def stock_k(time_start,gap,code,time_end= '2099-01-01'):
     """ gap 值可为 5/15/30/60/d/w/m """
-
+    print('参数', time_start, code, gap)
     #### 登陆系统 ####
     lg = bs.login()
 
@@ -74,8 +74,9 @@ def stock_k(time_start: str = '2016-01-01', time_end:str ='2099-01-01',gap: str 
     return result
 
 def stock_list(date:str, once:int, pages:int):
+    print()
     code_list = list(get_code()['ts_code'])[once*(pages-1):once*pages]
-    stock_list = [v.to_dict('records')[0] for v in [stock_k(date, date, code=code) for code in code_list]]
+    stock_list = [v.to_dict('records')[0] for v in [stock_k(time_start=date, gap='d', code=code, time_end=date) for code in code_list]]
     return stock_list
 
 def get_codes_count():
