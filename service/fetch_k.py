@@ -67,16 +67,21 @@ def stock_k(time_start: str = '2016-01-01', time_end:str ='2099-01-01',gap: str 
         result['date'] = result['time'].apply(time_converge).astype('datetime64[ns]')
         del result['time']
 
-    ###EMA计算###
-    shortEMA = calc_EMA(result['close'],12)
-    longEMA = calc_EMA(result['close'],26)
-
     #### 登出系统 ####
     bs.logout()
 
 
     #### 返回结果 ####
-    return result, shortEMA, longEMA
+    return result
+
+
+def  fetch_EMA(time_start: str = '2016-01-01', time_end:str ='2099-01-01',gap: str = 'd', code: str = 'sz.000001'):
+    result=fetch_EMA(time_start, time_end,gap, code)
+    ###EMA计算###
+    shortEMA = calc_EMA(result['close'],12)
+    longEMA = calc_EMA(result['close'],26)
+    return shortEMA, longEMA
+
 
 def stock_list(date:str, once:int, pages:int):
     code_list = list(get_code()['ts_code'])[once*(pages-1):once*pages]
