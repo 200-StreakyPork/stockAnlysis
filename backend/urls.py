@@ -21,7 +21,7 @@ from django.views.decorators.csrf import csrf_exempt
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^fetch_k', csrf_exempt(get_k), name='get_k'),
-    url(r'^get_count', csrf_exempt(get_count), name='get_count'),
+    url(r'^get_codes_count', csrf_exempt(get_count), name='get_count'),
     url(r'^get_events', csrf_exempt(get_events), name='get_events'),
     url(r'^get_comments', csrf_exempt(get_comments), name='get_comments'),
     url(r'^get_stock_list', csrf_exempt(get_stock_list), name='get_stock_list'),
