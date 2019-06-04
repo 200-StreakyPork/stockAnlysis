@@ -76,7 +76,7 @@ def stock_k(time_start: str = '2016-01-01', time_end:str ='2099-01-01',gap: str 
 
 
 def  fetch_EMA(time_start: str = '2016-01-01', time_end:str ='2099-01-01',gap: str = 'd', code: str = 'sz.000001'):
-    result=fetch_EMA(time_start, time_end,gap, code)
+    result=stock_k(time_start, time_end,gap, code)
     ###EMA计算###
     shortEMA = calc_EMA(result['close'],12)
     longEMA = calc_EMA(result['close'],26)
