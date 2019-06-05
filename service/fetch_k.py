@@ -1,8 +1,7 @@
 import baostock as bs
 import pandas as pd
 import tushare as ts
-from datetime import date, timedelta
-
+from .database import *
 
 def time_converge(param):
     return param[0:len(param) - 3]
@@ -24,8 +23,8 @@ def stock_k(time_start,gap,code,time_end= '2099-01-01'):
     lg = bs.login()
 
     # 显示登陆返回信息
-    print('login respond error_code:' + lg.error_code)
-    print('login respond  error_msg:' + lg.error_msg)
+    #print('login respond error_code:' + lg.error_code)
+    #print('login respond  error_msg:' + lg.error_msg)
 
     print(gap)
     if gap == 'd':
@@ -42,8 +41,8 @@ def stock_k(time_start,gap,code,time_end= '2099-01-01'):
                                       columns,
                                       start_date=time_start, end_date=time_end,
                                       frequency=gap, adjustflag="3")
-    print('query_history_k_data_plus respond error_code:' + rs.error_code)
-    print('query_history_k_data_plus respond error_msg:' + rs.error_msg)
+    #print('query_history_k_data_plus respond error_code:' + rs.error_code)
+    #print('query_history_k_data_plus respond error_msg:' + rs.error_msg)
 
     #### 打印结果集 ####
     data_list = []
@@ -74,10 +73,11 @@ def stock_k(time_start,gap,code,time_end= '2099-01-01'):
     return result
 
 def stock_list(date:str, once:int, pages:int):
-    print()
     code_list = list(get_code()['ts_code'])[once*(pages-1):once*pages]
     stock_list = [v.to_dict('records')[0] for v in [stock_k(time_start=date, gap='d', code=code, time_end=date) for code in code_list]]
+    get_latest()
     return stock_list
 
 def get_codes_count():
+    # return get_codes_num()
     return 3610

@@ -1,6 +1,6 @@
 from flask import jsonify, json, Flask, current_app
 from service.fetch_k import stock_k, stock_list, get_codes_count
-from service.spider import eventSpider, commentSpider
+from service.spider import pageSpider
 from django.http import JsonResponse
 
 app = Flask(__name__)
@@ -22,15 +22,8 @@ def get_events(request):
     str = request.body.decode(encoding='utf-8')
     body = json.loads(str)
     print('get_events:', body)
-    layout = body['layout']
-    return JsonResponse(eventSpider(layout), safe=False)
-
-def get_comments(request):
-    str = request.body.decode(encoding='utf-8')
-    body = json.loads(str)
-    print('get_comments:', body)
     page = body['page']
-    return JsonResponse(commentSpider(page), safe=False)
+    return JsonResponse(pageSpider(page), safe=False)
 
 def get_stock_list(request):
     str = request.body.decode(encoding='utf-8')
