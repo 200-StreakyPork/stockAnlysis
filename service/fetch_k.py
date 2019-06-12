@@ -100,3 +100,47 @@ def calc_EMA(closeList,num):
         else:
             list.append(round(float(closeList[i])*k+list[i-1]*(1-k), 2))
     return list
+
+def fetch_BIAS(time_start: str = '2016-01-01', time_end:str ='2099-01-01',gap: str = 'd', code: str = 'sz.000001'):
+    result=stock_k(time_start, time_end,gap, code)
+    ###BIAS计算###
+    closeList = result['close']
+    list = []
+    pre = 0.0
+    avg = 0.0
+    for i in range(0, len(closeList)-1):
+        if i < 5:
+            avg = (avg * i + float(closeList[i]))/(i+1)
+        else:
+            avg = (avg * 5 - pre + float(closeList[i]))/5
+        list.append(avg)
+        pre = float(closeList[i])
+    return list
+
+def fetch_WARN(time_start: str = '2016-01-01', time_end:str ='2099-01-01',gap: str = 'd', code: str = 'sz.000001'):
+    result=stock_k(time_start, time_end,gap, code)
+    ###WARN计算###
+    highList = result['high']
+    lowList = result['low']
+    closeList = result['close']
+    list = []
+    warn = 0.0
+    for i in range(0,len(result)-1):
+        highList[i] = float(highList[i])
+        lowList[i] = float(lowList[i])
+        closeList[i] = float(closeList[i])
+    for i in range(0, len(result)-1):
+        if i < 5:
+            list.append((lowList[i]-closeList[i])/(max(highList[0:i])-min(lowList[0:i]))*100)
+        else:
+            list.append((lowList[i]-closeList[i])/(max(highList[i-5:i])-min(lowList[i-5:i]))*100)
+    return list
+
+
+
+
+
+
+
+
+

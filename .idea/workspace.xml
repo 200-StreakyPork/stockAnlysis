@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bc7b2b13-3bcf-4a34-b2eb-90859544e122" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/fetch_k.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/fetch_k.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/fetch_k.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="781">
-              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+            <state relative-caret-position="561">
+              <caret line="135" column="97" lean-forward="true" selection-start-line="135" selection-start-column="97" selection-end-line="135" selection-end-column="97" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -76,7 +77,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -93,6 +93,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -230,7 +231,9 @@
       <workItem from="1558090014966" duration="2125000" />
       <workItem from="1559614570464" duration="3547000" />
       <workItem from="1560045742780" duration="19000" />
-      <workItem from="1560070580490" duration="265000" />
+      <workItem from="1560070580490" duration="917000" />
+      <workItem from="1560318617146" duration="5633000" />
+      <workItem from="1560334001454" duration="1986000" />
     </task>
     <task id="LOCAL-00001" summary="add flask web service with stock_fetch/spider">
       <created>1557895940640</created>
@@ -246,27 +249,35 @@
       <option name="project" value="LOCAL" />
       <updated>1559617891597</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add back-end branch">
+      <created>1560070884692</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1560070884692</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14736000" />
+    <option name="totallyTimeSpent" value="23007000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26119402" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2680965" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3373102" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3371105" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.329718" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
@@ -286,10 +297,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add flask web service with stock_fetch/spider" />
     <MESSAGE value="add MACD calculator" />
-    <option name="LAST_COMMIT_MESSAGE" value="add MACD calculator" />
+    <MESSAGE value="add back-end branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="add back-end branch" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/stockAnlysis$fetch_k.coverage" NAME="fetch_k Coverage Results" MODIFIED="1559617805591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/service" />
+    <SUITE FILE_PATH="coverage/stockAnlysis$fetch_k.coverage" NAME="fetch_k Coverage Results" MODIFIED="1560319592854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/service" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/controller/test.py" />
@@ -321,8 +333,8 @@
     <entry file="file://$PROJECT_DIR$/service/MACD.py" />
     <entry file="file://$PROJECT_DIR$/service/fetch_k.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="781">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+        <state relative-caret-position="561">
+          <caret line="135" column="97" lean-forward="true" selection-start-line="135" selection-start-column="97" selection-end-line="135" selection-end-column="97" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
