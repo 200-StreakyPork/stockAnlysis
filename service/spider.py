@@ -4,6 +4,7 @@ import json
 
 def spider():
     count = 0
+    list = []
     '''
     layoutList = {'global', 'theme', 'a-stock', 'us-stock', 'forex', 'commodity', 'blockchain'}
     for layout in layoutList:
@@ -11,7 +12,6 @@ def spider():
         html=res.text
         soup=BeautifulSoup(html, 'html.parser')
         items=soup.find_all(class_='live-item')
-        list = []
         for item in items:
             count = count+1
             time_ = item.find(class_='live-item_created')
