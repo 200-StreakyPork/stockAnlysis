@@ -4,6 +4,7 @@ import json
 
 def spider():
     count = 0
+    '''
     layoutList = {'global', 'theme', 'a-stock', 'us-stock', 'forex', 'commodity', 'blockchain'}
     for layout in layoutList:
         res=requests.get('https://wallstreetcn.com/live/'+layout)
@@ -36,6 +37,7 @@ def spider():
             elif brief is not None:
                 #print(time_, '\n', title.text, '\n', brief.text, '\n', link, '\n\n')
                 list.append(json.dumps({"date": time_, "title": strTrans(title.text), "brief": strTrans(brief.text), "link": link, "source": switch_layout(layout)}, ensure_ascii=False))
+    '''
     for page in [1, 25]:
         if page != 1:
             page = str(page)
@@ -88,6 +90,8 @@ def getTime(jsonData):
 def switch_layout(str : str):
     switcher = {"global":"华尔街见闻-要闻", "theme":"华尔街见闻-科创版", "a-stock":"华尔街见闻-A股", "us-stock":"华尔街见闻-美股", "forex":"华尔街见闻-外汇", "commodity" :"华尔街见闻-商品", "blockchain":"华尔街见闻-区块链", }
     return switcher.get(str, 'wrong value')
+
+print(spider())
 
 
 
